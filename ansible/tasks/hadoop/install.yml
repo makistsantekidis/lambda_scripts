@@ -1,0 +1,9 @@
+---
+
+- name: Download hadoop from apache servers
+  get_url: url=http://mirrors.myaegean.gr/apache/hadoop/common/hadoop-2.7.0/hadoop-2.7.0.tar.gz
+           dest=/root/hadoop.tar.gz
+
+- name: Untar hadoop
+- unarchive: src=/root/hadoop.tar.gz copy=no
+             dest=/usr/local/

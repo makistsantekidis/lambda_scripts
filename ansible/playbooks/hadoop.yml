@@ -1,0 +1,6 @@
+---
+- hosts: ui-servers
+  user: ansible
+  sudo: True
+
+      - include: tasks/cdu/install.yml           tags=cdu

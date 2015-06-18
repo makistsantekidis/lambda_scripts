@@ -1,0 +1,7 @@
+---
+
+- name: Copy volume-specific cdu scripts
+  tags: install_scripts
+  copy: src=files/usr/local/hadoop/etc/hadoop/hdfs-site.xml
+        dest=/usr/local/hadoop/etc/hadoop/hdfs-site.xml backup=no
+        owner=root group=root mode=0750
