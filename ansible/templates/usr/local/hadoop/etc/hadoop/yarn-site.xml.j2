@@ -15,14 +15,14 @@
 <configuration>
   <property>
     <name>yarn.resourcemanager.resource-tracker.address</name>
-    <value>snf-660017:8025</value>
+    <value>{{ hadoop_master }}:8025</value>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.address</name>
-    <value>snf-660017:8030</value>
+    <value>{{ hadoop_master }}:8030</value>
   </property>
   <property>
     <name>yarn.resourcemanager.address</name>
-    <value>snf-660017:8050</value>
+    <value>{{ hadoop_master }}:8050</value>
   </property>
 </configuration>

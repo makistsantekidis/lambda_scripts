@@ -1,6 +1,14 @@
 ---
-- hosts: ui-servers
-  user: ansible
-  sudo: True
 
-      - include: tasks/cdu/install.yml           tags=cdu
+- hosts: vms
+  user: root
+
+  tasks:
+    - include: ../tasks/hadoop/install.yml   tags=install
+    - include: ../tasks/hadoop/config.yml    tags=config
+
+- hosts: master
+  user: root
+
+  tasks:
+    - include: ../tasks/hadoop/start.yml   tags=start
