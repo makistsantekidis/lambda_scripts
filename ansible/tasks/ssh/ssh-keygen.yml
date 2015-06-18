@@ -1,0 +1,5 @@
+---
+
+- name: Run ssh-keygen
+  tags: install_scripts
+  command: ssh-keygen creates=/root/.ssh/
