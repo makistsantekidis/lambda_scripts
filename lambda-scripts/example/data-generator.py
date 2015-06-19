@@ -26,8 +26,7 @@ def main():
 			tags = tags + '#' + line.strip()
 		i += 1
 	f.close()
-	print message
-	print tags
+	print message,tags
 
 if __name__ == '__main__':
 	main()
