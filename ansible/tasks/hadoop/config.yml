@@ -2,6 +2,7 @@
 
 - name: Set hadoop env
   lineinfile: dest=/usr/local/hadoop/etc/hadoop/hadoop-env.sh regexp="^export JAVA_HOME=" line="export JAVA_HOME=/usr/"
+  tags: env
 
 - name: Copy slaves configuration
   template: src=../templates/usr/local/hadoop/etc/hadoop/slaves.j2
