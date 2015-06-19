@@ -23,7 +23,7 @@ def main():
 		if i in lines:
 			message = message + line.strip() + ' '
 		if i in hashtags:
-			tags = tags + '#' + line.strip()
+			tags = tags + '#' + line.strip() + ' '
 		i += 1
 	f.close()
 	print message,tags
