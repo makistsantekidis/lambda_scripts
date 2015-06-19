@@ -4,8 +4,8 @@ master
 slaves
 
 [master]
-snf-661243.vm.okeanos.grnet.gr
+snf-661306.vm.okeanos.grnet.gr
 
 [slaves]
-snf-661526.vm.okeanos.grnet.gr
-snf-661527.vm.okeanos.grnet.gr
+snf-661303.vm.okeanos.grnet.gr
+snf-661304.vm.okeanos.grnet.gr
