@@ -1,0 +1,14 @@
+---
+
+- hosts: vms
+  user: root
+
+  tasks:
+  # aptitude packages
+    - include: ../tasks/aptitude/java.yml   tags=install_scripts
+    - include: ../tasks/aptitude/vim.yml   tags=install_scripts
+    - include: ../tasks/aptitude/python.yml   tags=install_scripts
+  # copy /etc/hosts file
+    - include: ../tasks/install/hosts.yml
+  # run ssh-keygen
+    - include: ../tasks/ssh/ssh-keygen.yml
