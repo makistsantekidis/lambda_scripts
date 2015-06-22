@@ -2,6 +2,8 @@
 
 - hosts: vms
   user: root
+  vars_files: 
+    - ../vars/hosts.yml
 
   tasks:
   # aptitude packages
@@ -9,6 +11,16 @@
     - include: ../tasks/aptitude/vim.yml   tags=install_scripts
     - include: ../tasks/aptitude/python.yml   tags=install_scripts
   # copy /etc/hosts file
-    - include: ../tasks/install/hosts.yml
+    - include: ../tasks/install/hosts.yml  tags=install_scripts
   # run ssh-keygen
-    - include: ../tasks/ssh/ssh-keygen.yml
+    - include: ../tasks/ssh/ssh-keygen.yml  tags=install_scripts
+
+- hosts: root
+  user: root
+  # copy ssh public key of master
+    - include: ../tasks/ssh/fetch-key.yml
+
+- hosts: vms
+  user: root
+  # distribute ssh key to all nodes
+    - include: ../tasks/ssh/authorized-key.yml

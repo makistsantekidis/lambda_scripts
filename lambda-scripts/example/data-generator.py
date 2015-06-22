@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import linecache
 import random
 
 def main():
