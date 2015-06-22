@@ -1,0 +1,5 @@
+---
+- name: Start Apache Kafka server.
+  shell: /usr/local/kafka_2.10-0.8.2.1/bin/kafka-server-start.sh /usr/local/kafka_2.10-0.8.2.1/config/server.properties
+  async: 31536000 # Stay alive for a year(1 year = 31536000 seconds).
+  poll: 0

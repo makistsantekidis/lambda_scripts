@@ -1,0 +1,13 @@
+---
+
+- hosts: master
+  user: root
+  tasks:
+    - include: ../tasks/apache-kafka/download-kafka.yml         tags=download
+    - include: ../tasks/apache-kafka/uncompress-kafka.yml       tags=uncompress
+    - include: ../tasks/apache-kafka/create-softlink-kafka.yml  tags=uncompress
+    - include: ../tasks/apache-kafka/start-zookeeper-server.yml tags=start-zookeeper
+    - include: ../tasks/apache-kafka/wait-for-zookeeper.yml     tags=start-zookeeper
+    - include: ../tasks/apache-kafka/start-kafka-server.yml     tags=start-kafka
+    - include: ../tasks/apache-kafka/wait-for-kafka.yml         tags=start-kafka
+    - include: ../tasks/apache-kafka/create-kafka-topics.yml    tags=create-topics
